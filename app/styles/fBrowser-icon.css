@@ -1,0 +1,12 @@
+.fBrowser-icon {
+    background: url(fBrowser-icon.png) no-repeat top left;
+}
+
+.icon {
+	display: inline-block;
+}
+
+.fBrowser-icon-gdrive128{ background-position: 0 0; width: 128px; height: 128px; } 
+.fBrowser-icon-gdrive256{ background-position: 0 -178px; width: 256px; height: 256px; } 
+.fBrowser-icon-gdrive32{ background-position: 0 -484px; width: 32px; height: 32px; } 
+.fBrowser-icon-gdrive48{ background-position: 0 -566px; width: 48px; height: 48px; } 

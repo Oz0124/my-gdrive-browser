@@ -1,0 +1,5 @@
+{{partial 'header-nav'}}
+{{#if session.isAuthenticated}}
+	{{outlet}}
+{{/if}}
+{{outlet 'modal'}}

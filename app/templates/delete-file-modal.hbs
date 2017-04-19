@@ -1,0 +1,10 @@
+{{#modal-frame title='確定要永久刪除?' ok='ok' okText='永久刪除' close='removeModal' closeText='取消' modal-header-close-btn=true}}
+	<div class="model-content">
+		{{#if model.fileItem.fileSize}}
+			<p>檔案 {{model.fileItem.title}} 即將遭到永久刪除。</p>
+		{{else}}
+			<p>資料夾 {{model.fileItem.title}} 即將遭到永久刪除。</p>
+		{{/if}}		
+		<p class="bg-danger"><strong>警告：這個動作無法復原。</strong></p>
+	</div>
+{{/modal-frame}}

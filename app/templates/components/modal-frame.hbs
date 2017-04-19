@@ -1,0 +1,23 @@
+<div class="modal fade">
+  	<div class="modal-dialog">
+    	<div class="modal-content">
+	      	<div class="modal-header">
+	      		{{#if modal-header-close-btn}}
+	        		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+	        	{{/if}}
+	        	<h4 class="modal-title">{{title}}</h4>
+	      	</div>
+	      	<div class="modal-body">
+	        	{{yield}}
+	      	</div>
+	      	<div class="modal-footer">
+	      		{{#if closeText}}
+	        		<button type="button" class="btn btn-default" data-dismiss="modal">{{closeText}}</button>
+	        	{{/if}}
+	        	{{#if okText}}
+	        		<button type="button" class="btn btn-primary" {{action 'ok'}}>{{okText}}</button>
+	        	{{/if}}
+	      	</div>
+    	</div>
+  	</div>
+</div>

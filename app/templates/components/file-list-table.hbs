@@ -1,0 +1,62 @@
+
+<table class="table table-hover">
+	<thead>
+    	<tr>
+        	<td class="col-md-4 col-sm-6 col-xs-8">名稱</td>
+        	<td class="col-md-1 col-sm-2 hidden-xs">擁有者</td>
+        	<td class="col-md-2 hidden-sm hidden-xs">上次修改日期</td>
+        	<td class="col-md-1 col-sm-2 hidden-xs">檔案大小</td>
+        	<td class="col-md-1 col-sm-2 col-xs-2">操作</td>
+    	</tr>
+	</thead>
+	<tbody>
+	    {{#if files}}
+		    {{#each item in files}}
+		    	<tr>
+			       	<td class="col-md-4 col-sm-6 col-xs-8">
+			       		<img class="file-type-icon" {{bind-attr src='item.iconLink'}} alt="">
+			       		{{#if item.webContentLink}}
+			       			<a {{bind-attr href='item.webContentLink'}}>{{item.title}}</a>
+			       		{{else}}
+			       			<a {{bind-attr href='item.alternateLink'}} target='_blank'>{{item.title}}</a>
+			       		{{/if}}
+			       	</td>
+			       	<td  class="col-md-1 col-sm-2 hidden-xs">{{item.ownerNames}}</td>
+			       	<td class="col-md-2 hidden-sm hidden-xs">
+			       		<span>{{item.modifiedDateString}}</span>
+			       		{{#if item.lastModifyingUserName}}
+			       			<span>({{item.lastModifyingUserName}})</span>
+			       		{{/if}}
+			      	</td>
+			       	<td class="col-md-1 col-sm-2 hidden-xs">
+				       	{{#if item.fileSizeString}}
+				       		{{item.fileSizeString}}
+				       	{{else}}
+				       		--
+				       	{{/if}}
+			       	</td>
+			       	<td class="col-md-1 col-sm-8 col-xs-2">
+			       		<div>
+			       			{{#if item.explicitlyTrashed}}
+			       				<i class="glyphicon glyphicon-repeat" role="button" {{action 'recovery' item}}></i>
+					        	<i class="glyphicon glyphicon-remove" role="button" {{action 'delete' item}}></i>
+			       			{{else}}
+				       			{{#unless item.sharedWithMeDate}}
+					       			{{#if item.fileSizeString}}
+					        			<i class="glyphicon glyphicon-pencil" role="button" {{action 'edit' item}}></i>
+					        		{{else}}
+					        			<a {{bind-attr href='item.alternateLink'}} target='_blank'>
+					        				<i class="glyphicon glyphicon-pencil"></i>
+					        			</a>
+					        		{{/if}}
+					        		<i class="glyphicon glyphicon-trash" role="button" {{action 'trash' item}}></i>
+					       		{{/unless}}
+				       		{{/if}}
+				       	</div>
+			       	</td>
+			    </tr>
+			{{/each}}
+		{{/if}}
+	</tbody>
+</table>
+

@@ -1,0 +1,9 @@
+{{#if addFileMode}}
+	<button type="button" class="btn btn-primary btn-lg" {{action 'click'}}>選擇檔案</button>
+{{else}}
+	<div class="progress">
+	  <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+	  </div>
+	</div>
+{{/if}}
+<input type="file" id="upload-file" class="hidden" multiple>

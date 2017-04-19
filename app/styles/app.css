@@ -1,0 +1,59 @@
+body { 
+	padding-top: 70px;
+}
+
+.modal-content {
+	text-align:center;
+}
+
+.user-photo {
+	width: 50px;
+	height: 50px;
+}
+
+.file-type-icon {
+	width: 16px;
+	height: 16px;
+}
+
+.folder-tree {
+	height: 100%;
+}
+
+.folder-tree .fancytree-container {
+	height: 100%;
+	background-color: #f5f5f5;
+	border: 0px;
+}
+
+.sidebar {
+	/*position: fixed;
+	height: 80%;*/
+}
+
+/* fancytree contextMenu*/
+.context-menu-item {
+	width: 100%;
+}
+
+.fancytree-funct-icon {
+	margin-left: 5px;
+	color: #000000;
+}
+
+.fancytree-options {
+	display: inline-block;
+	float: right; 
+	padding-right: 5px;
+}
+
+/* fancytree css override*/
+.folder-tree .fancytree-plain.fancytree-container span.fancytree-title:hover {
+  background-color: #eee;
+}
+
+.folder-tree .fancytree-plain.fancytree-container span.fancytree-node:hover {
+	background-color: #eee;
+	border-radius: 3px;
+	border: 1px solid #ddd;
+}
