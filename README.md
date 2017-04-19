@@ -1,7 +1,11 @@
 # Ember-gdrive-browser
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+This is a simple application to browse your Google Drive files.
+Built entirely to learn Ember.js framework and Google Drive API.
+
+* 申請google drive api client id
+* 填入vendor/MyLib/PreGDrive.js中CLIENT_ID參數
+* 填入config/environment.js中apiKey參數
 
 ## Prerequisites
 
@@ -51,6 +55,4 @@ Specify what it takes to deploy your app.
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
   * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
 
-"# my-drive-app" 
-"# my-gdrive-browser" 
 "# my-gdrive-browser" 
