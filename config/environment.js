@@ -57,13 +57,15 @@ module.exports = function(environment) {
     providers: {
       // Get authorization code
       'google-oauth2': {
-        apiKey: 'your google drive api Client id',
+        // apiKey: 'your google drive api Client id',
+        apiKey: '398030873994-a5llde5b923ahktl54iv0r36lhk34en1.apps.googleusercontent.com',
         scope: "https://www.googleapis.com/auth/drive",
         redirectUri: 'http://localhost:4200/'
       },
       // Get google token
       'google-oauth2-bearer': {
-        apiKey: 'your google drive api Client id',
+        // apiKey: 'your google drive api Client id',
+        apiKey: '398030873994-a5llde5b923ahktl54iv0r36lhk34en1.apps.googleusercontent.com',
         scope: "https://www.googleapis.com/auth/drive",
         redirectUri: 'http://localhost:4200/'
       }
