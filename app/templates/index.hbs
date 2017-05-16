@@ -1,25 +1,25 @@
 <div class="container-fluid">
-  <div class="row-fluid">
-    {{#if model}}
-      <div class="col-md-3 col-xs-12 sidebar">
-        <ul class="well nav nav-sidebar">
-          <li>
-            <a href="#" {{action 'showInsertFileDialog'}}><i class="glyphicon glyphicon-plus"> 新增檔案</i></a>
-          </li>
-          <li>
-            <a href="#" {{action 'loadShareWithMeFolders'}}><i class="glyphicon glyphicon-user"> 與我共用</i></a>
-          </li>
-          <li>
-            <a href="#" {{action 'loadTrashFolders'}}><i class="glyphicon glyphicon-trash"> 垃圾桶</i></a>
-          </li>
-          <li>
-            {{folder-tree class="folder-tree" treeOptions=treeOptions treeCustomMethods=treeCustomMethods  showProgressBar="showProgressBar" closeProgressBar="closeProgressBar"}}
-          </li>
-        </ul>
-      </div>
-      <div class="col-md-9 col-xs-12">
-        {{file-list-table files=files showTrashFileDialog="showTrashFileDialog" showEditFileNameDialog="showEditFileNameDialog" showDeleteFileDialog="showDeleteFileDialog" recoveryFile="recoveryFile"}}      
-      </div>
-    {{/if}}  
-  </div>
+    <div class="row-fluid">
+        {{#if model}}
+            <div class="col-md-3 col-xs-12 sidebar">
+                <ul class="well nav nav-sidebar">
+                    <li>
+                        <a href="#" {{action 'showInsertFileDialog'}}><i class="glyphicon glyphicon-plus"></i> Upload File</a>
+                    </li>
+                    <li>
+                        <a href="#" {{action 'loadShareWithMeFolders'}}><i class="glyphicon glyphicon-user"></i> Share with Me</a>
+                    </li>
+                    <li>
+                        <a href="#" {{action 'loadTrashFolders'}}><i class="glyphicon glyphicon-trash"></i> Trash</a>
+                    </li>
+                    <li>
+                        {{folder-tree class="folder-tree" treeOptions=treeOptions treeCustomMethods=treeCustomMethods  showProgressBar="showProgressBar" closeProgressBar="closeProgressBar"}}
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-9 col-xs-12">
+                {{file-list-table files=files showTrashFileDialog="showTrashFileDialog" showEditFileNameDialog="showEditFileNameDialog" showDeleteFileDialog="showDeleteFileDialog" recoveryFile="recoveryFile"}}      
+            </div>
+        {{/if}}  
+    </div>
 </div>

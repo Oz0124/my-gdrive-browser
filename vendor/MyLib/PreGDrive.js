@@ -7,7 +7,7 @@ MyLib.GDriveBrowser = (function() {
 	// Your Client ID can be retrieved from your project in the Google
     // Developer Console, https://console.developers.google.com
     var CLIENT_ID = 'your google drive api Client id';
-
+    
     var SCOPES = ['https://www.googleapis.com/auth/drive'];
 
     /**

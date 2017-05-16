@@ -7,11 +7,10 @@ export default Ember.Controller.extend({
 		var item = null;
 
 		this.store.filter('files', {isRootFolder: true}, function (file) {
-		  item = {
-		  	key: file.get('fileId'),
-			title: file.get('name')
-		  };
-
+		  	item = {
+		  		key: file.get('fileId'),
+				title: file.get('name')
+		  	};
 		});
 		return item;
 	}.property('model'),
@@ -54,12 +53,12 @@ export default Ember.Controller.extend({
 				fileItem: fileItem
 			};
 
-			this.send('showModal', 'trash-file-modal', viewModel);
+			this.send('showModal', 'modals/trash-file-modal', viewModel);
 		},
 		// 顯示編輯file name Dialog
 		showEditFileNameDialog: function (fileItem) {
 
-			this.send('showModal', 'edit-file-name-modal', fileItem);
+			this.send('showModal', 'modals/edit-file-name-modal', fileItem);
 		},
 		// 顯示上傳檔案Dialog
 		showInsertFileDialog: function () {
@@ -69,7 +68,8 @@ export default Ember.Controller.extend({
             var folderId = "";
             if (activeNode) {
                 folderId = activeNode.key;
-            } else {
+            } 
+            else {
                 folderId = treeMethods.getRootNode().key;
                 
             }
@@ -80,7 +80,7 @@ export default Ember.Controller.extend({
 				treeMethods: treeMethods
 			};
 
-			this.send('showModal','upload-file-modal',viewModel);
+			this.send('showModal','modals/upload-file-modal',viewModel);
 		},
 		// 顯示確認刪除檔案Dialog
 		showDeleteFileDialog: function (fileItem) {
@@ -91,7 +91,7 @@ export default Ember.Controller.extend({
 				fileItem: fileItem
 			};
 
-			this.send('showModal', 'delete-file-modal', viewModel);
+			this.send('showModal', 'modals/delete-file-modal', viewModel);
 		},
 		// 復原檔案
 		recoveryFile: function (fileItem) {
@@ -123,29 +123,11 @@ export default Ember.Controller.extend({
 		}
 	},
 	init: function () {
-		//console.log("index controller finish!");
 		var self = this;
 
 		//設定tree元件 options
 		var treeOptions = {
 			checkBox: false,
-			/*
-			extensions: ['contextMenu'],
-			contextMenu: {
-				menu: {
-					'add': { 'name': 'Add', 'icon': 'add'},
-					'edit': {'name': 'Edit', 'icon': 'edit'},
-			        'delete': {'name': 'Delete', 'icon': 'delete'}
-				},
-				callback: {
-					actions: function (node, action, options) {
-						console.log(node);
-						console.log(action);
-					}
-				}
-				
-			},
-			*/
 			callback: {
 				renderNode: function (event, data) {
 					
@@ -169,7 +151,7 @@ export default Ember.Controller.extend({
 				       	var viewModel = {
 				       		node: node
 				       	};
-				        self.send('showModal', 'new-folder-modal', viewModel);
+				        self.send('showModal', 'modals/new-folder-modal', viewModel);
 				    });
                 	
                 	if (!data.node.getParent().isRootNode()) {
@@ -181,7 +163,7 @@ export default Ember.Controller.extend({
 				       		var viewModel = {
 				       			node: node
 				       		};
-				       		self.send('showModal', 'edit-folder-name-modal', viewModel);
+				       		self.send('showModal', 'modals/edit-folder-name-modal', viewModel);
 				        });
 
 				       	// delete folder
@@ -192,7 +174,7 @@ export default Ember.Controller.extend({
 				       		var viewModel = {
 				       			node: node
 				       		};
-				       		self.send('showModal', 'trash-folder-modal', viewModel);
+				       		self.send('showModal', 'modals/trash-folder-modal', viewModel);
 				        });
                 	}
 										
@@ -233,10 +215,6 @@ export default Ember.Controller.extend({
 								data.node.setActive(false);
 							}
 							data.node.setActive(true);
-
-
-							// close progress bar
-							//self.closeProgressBar();
 						});
 			        });
 
@@ -384,7 +362,7 @@ export default Ember.Controller.extend({
   		fileSizeString = this.generateFileSizeString(file.fileSize);
         
 		// 產生最後修改日期字串
-		timeString = date.getUTCFullYear() + "年" + (date.getUTCMonth() + 1) + "月" + date.getUTCDate() + "日";
+		timeString = date.getUTCFullYear() + "-" + (date.getUTCMonth() + 1) + "-" + date.getUTCDate() + "";
 		  			
 		item = {
 		    fileSizeString: fileSizeString,
@@ -432,7 +410,7 @@ export default Ember.Controller.extend({
 	},
 	showProgressBar: function () {
 		if ($('.modal').length === 0) {
-			this.send('showModal', 'progress-bar-modal', null);
+			this.send('showModal', 'modals/progress-bar-modal', null);
 		}
 
 	},

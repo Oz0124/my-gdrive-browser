@@ -14,7 +14,7 @@ export default Ember.Controller.extend({
 	    	// 關閉編輯file name Dialog
 			$('.modal').modal('hide');
 			// 開啟progress bar
-			this.send('showModal', 'progress-bar-modal', null);
+			this.send('showModal', 'modals/progress-bar-modal', null);
 			// 呼叫google api 更新
 	    	MyLib.GDriveBrowser.updateFileMetadata(fileItem.id, newFileMetadata, function (resp) {
 	    		if (resp) {

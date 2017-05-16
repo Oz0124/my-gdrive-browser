@@ -1,0 +1,10 @@
+{{#modal-frame title='Delete file?' ok='ok' okText='Delete' close='removeModal' closeText='Cancel' modal-header-close-btn=true}}
+	<div class="model-content">
+		{{#if model.fileItem.fileSize}}
+			<p>file {{model.fileItem.title}} will be permanently deleted.</p>
+		{{else}}
+			<p>Folder {{model.fileItem.title}} will be permanently deleted.</p>
+		{{/if}}		
+		<p class="bg-danger"><strong>Warning: This action can not be undone.</strong></p>
+	</div>
+{{/modal-frame}}

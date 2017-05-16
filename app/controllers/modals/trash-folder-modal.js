@@ -12,7 +12,7 @@ export default Ember.Controller.extend({
 	    	// 先關閉確認將資料夾丟垃圾桶Dialog	 
 	    	$('.modal').modal('hide');
 	    	// 開啟progress bar
-	    	this.send('showModal', 'progress-bar-modal', null);
+	    	this.send('showModal', 'modals/progress-bar-modal', null);
 	    	// 呼叫Google Api 丟垃圾桶
 	    	MyLib.GDriveBrowser.trashFile(folderId, function (resp) {
 	    		if (resp.result) {
