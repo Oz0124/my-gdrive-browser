@@ -31,15 +31,15 @@ module.exports = function(environment) {
             providers: {
                 // Get authorization code
                 'google-oauth2': {
-                    apiKey: 'your google drive api Client id',
+                    apiKey: '',
                     scope: "https://www.googleapis.com/auth/drive",
-                    redirectUri: 'https://oz-wfb.000webhostapp.com/'
+                    redirectUri: 'http://localhost:4200/'
                 },
                 // Get google token
                 'google-oauth2-bearer': {
-                    apiKey: 'your google drive api Client id',
+                    apiKey: '',
                     scope: "https://www.googleapis.com/auth/drive",
-                    redirectUri: 'https://oz-wfb.000webhostapp.com/'
+                    redirectUri: 'http://localhost:4200/'
                 }
             }
         },

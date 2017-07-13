@@ -18,8 +18,10 @@
                 </ul>
             </div>
             <div class="col-md-9 col-xs-12">
-                {{file-list-table files=files showTrashFileDialog="showTrashFileDialog" showEditFileNameDialog="showEditFileNameDialog" showDeleteFileDialog="showDeleteFileDialog" recoveryFile="recoveryFile"}}      
+                {{file-list-table class="file-list-table" files=files showTrashFileDialog="showTrashFileDialog" showEditFileNameDialog="showEditFileNameDialog" showDeleteFileDialog="showDeleteFileDialog" recoveryFile="recoveryFile"}}      
             </div>
+        {{else}}
+            <div class="loadingIcon-64"></div>
         {{/if}}  
     </div>
 </div>

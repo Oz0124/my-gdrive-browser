@@ -57,7 +57,7 @@ var contextmenuImages = pickFiles('vendor/fancytree.extensions/contextmenu/image
   destDir: 'images'
 });
 // google drive api sdk
-app.import('vendor/gdrive.js');
+// app.import('vendor/gdrive.js');
 
 // penpower file browser icon
 app.import('app/styles/fBrowser-icon.css');
