@@ -3,9 +3,11 @@
 This is a simple application to browse your Google Drive files.
 Built entirely to learn Ember.js framework and Google Drive API.
 
-[Demo](https://oz-wfb.000webhostapp.com/)
 
-[Demo 1](https://oz0124-demo.pancakeapps.com/my-gdrive-browser/)
+[Demo](https://oz0124-github.io/my-gdrive-browser/)
+
+[Demo 1](https://oz-wfb.000webhostapp.com/)
+
 
 執行此專案時，請先進行以下動作:
 * 申請google drive api client id
